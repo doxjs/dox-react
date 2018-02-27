@@ -54,16 +54,9 @@ export function connect(component) {
             return createElement(component, {
                 ...this.props,
                 dox: this.dox,
-                store: this.dox.observe()
+                ...this.dox.observe()
             }, this.props.children);
         }
     }
 
 }
-
-class A extends Component {
-
-}
-
-
-console.log([connect(A)]);
